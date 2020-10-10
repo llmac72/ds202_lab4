@@ -44,7 +44,7 @@ bio1 <-  bio %>%
 
 ```
 
-<font size = "3"> 2.	All offensive and defensive statistics are numerical. The Weight column in biogrpahy is also numeric. (Optional: Learn to mutate multiple columns systematically using the ?across function in `dplyr)
+<font size = "3"> 2.	All offensive and defensive statistics are numerical. The Weight column in biography is also numeric. (Optional: Learn to mutate multiple columns systematically using the ?across function in `dplyr)
 
 ```{r message=FALSE}
 
@@ -60,7 +60,7 @@ bio2 <- bio1 %>%
 
 ```
 
-<font size = "3"> 3.	Change the Height column in biogrpahy into numeric. (Hint: Use a unit that works well).
+<font size = "3"> 3.	Change the Height column in biography into numeric. (Hint: Use a unit that works well).
 
 Converted the height to inches; column heading *Height_in*.  Only showing the first 6 rows of the *bioClean* dataframe.
 
@@ -215,7 +215,7 @@ ggplot(offPos, aes(Position, Stat, fill=Off_Skill)) +
 
 3.	How does the performance of quarterback Brock Purdy relate to the performance of the ISU team?
 
-After filtering for *Brock Purdy* and removing several columns that weren't relevant to the quarterback perfromance, I used the information from https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/ to calculate an overall quarterback *Rating* which I arranged in ascending order.  Next I added a column that recorded whether the game was a win or loss for Iowa State and trimmed the dataframe to only contain *Name*, *Opponent_Opponent*, *W_L* and *Rating* columns.  It appears that if Bock Purdy's *Rating* was less then 100, there was a good chance that Iowa State would lose; if the *Rating* was over 100 there was a good chance that Iowa State would win.  Of course, there are always an outlier or two. 
+After filtering for *Brock Purdy* and removing several columns that weren't relevant to the quarterback performance, I used the information from https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/ to calculate an overall quarterback *Rating* which I arranged in ascending order.  Next I added a column that recorded whether the game was a win or loss for Iowa State and trimmed the dataframe to only contain *Name*, *Opponent_Opponent*, *W_L* and *Rating* columns.  It appears that if Bock Purdy's *Rating* was less then 100, there was a good chance that Iowa State would lose; if the *Rating* was over 100 there was a good chance that Iowa State would win.  Of course, there are always an outlier or two. 
 
 ```{r message=FALSE}
 offClean2 <- offClean %>%
@@ -233,7 +233,7 @@ offClean2
 
 4.	Which ISU player(s) made big progress over the last year? Compare the 2019 and the 2018 data here.
 
-Defense:  There were 28 players that played during both the 2018 and 2019 seasons,  O'Rien Vance and Zach Petersen appear to show the most improvement in several defensive skills; JaQuan Baiey didn't perform as well in the 2019 season as he did in the 2018 season.
+Defense:  There were 28 players that played during both the 2018 and 2019 seasons,  O'Rien Vance and Zach Petersen appear to show the most improvement in several defensive skills; JaQuan Bailey didn't perform as well in the 2019 season as he did in the 2018 season.
 ```{r message=FALSE, fig.width=20, fig.height=15}
 
 defense2 <- read_excel('C:/Users/lisa.mcdaniel/DS202/ds202lab4/cyclonesFootball2018.xlsx',

@@ -393,7 +393,7 @@ off1 &lt;- offense %&gt;%
 
 bio1 &lt;-  bio %&gt;%
   mutate(Name = as.factor(Name))</code></pre>
-<p><font size="3"> 2. All offensive and defensive statistics are numerical. The Weight column in biogrpahy is also numeric. (Optional: Learn to mutate multiple columns systematically using the ?across function in `dplyr)</p>
+<p><font size="3"> 2. All offensive and defensive statistics are numerical. The Weight column in biography is also numeric. (Optional: Learn to mutate multiple columns systematically using the ?across function in `dplyr)</p>
 <pre class="r"><code>defClean &lt;- def1 %&gt;%
   mutate(across(.cols = (Tackles_Solo:Pass_PB), .fns = (as.numeric)))
 
@@ -403,7 +403,7 @@ offClean &lt;- off1 %&gt;%
 
 bio2 &lt;- bio1 %&gt;%
   mutate(Weight = as.numeric(Weight))</code></pre>
-<p><font size="3"> 3. Change the Height column in biogrpahy into numeric. (Hint: Use a unit that works well).</p>
+<p><font size="3"> 3. Change the Height column in biography into numeric. (Hint: Use a unit that works well).</p>
 <p>Converted the height to inches; column heading <em>Height_in</em>. Only showing the first 6 rows of the <em>bioClean</em> dataframe.</p>
 <pre class="r"><code>bioClean &lt;- bio2 %&gt;%
  separate(Height, c(&#39;feet&#39;, &#39;inches&#39;), sep = &#39;-&#39;) %&gt;%
@@ -594,7 +594,7 @@ ggplot(offPos, aes(Position, Stat, fill=Off_Skill)) +
 <ol start="3" style="list-style-type: decimal">
 <li>How does the performance of quarterback Brock Purdy relate to the performance of the ISU team?</li>
 </ol>
-<p>After filtering for <em>Brock Purdy</em> and removing several columns that weren’t relevant to the quarterback perfromance, I used the information from <a href="https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/" class="uri">https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/</a> to calculate an overall quarterback <em>Rating</em> which I arranged in ascending order. Next I added a column that recorded whether the game was a win or loss for Iowa State and trimmed the dataframe to only contain <em>Name</em>, <em>Opponent_Opponent</em>, <em>W_L</em> and <em>Rating</em> columns. It appears that if Bock Purdy’s <em>Rating</em> was less then 100, there was a good chance that Iowa State would lose; if the <em>Rating</em> was over 100 there was a good chance that Iowa State would win. Of course, there are always an outlier or two.</p>
+<p>After filtering for <em>Brock Purdy</em> and removing several columns that weren’t relevant to the quarterback performance, I used the information from <a href="https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/" class="uri">https://www.dummies.com/sports/football/offense/how-to-read-a-quarterbacks-statistics/</a> to calculate an overall quarterback <em>Rating</em> which I arranged in ascending order. Next I added a column that recorded whether the game was a win or loss for Iowa State and trimmed the dataframe to only contain <em>Name</em>, <em>Opponent_Opponent</em>, <em>W_L</em> and <em>Rating</em> columns. It appears that if Bock Purdy’s <em>Rating</em> was less then 100, there was a good chance that Iowa State would lose; if the <em>Rating</em> was over 100 there was a good chance that Iowa State would win. Of course, there are always an outlier or two.</p>
 <pre class="r"><code>offClean2 &lt;- offClean %&gt;%
   filter(Name == &quot;Purdy, Brock&quot;) %&gt;%
   select(-Receiving_REC, -Receiving_TD, -Receiving_YDS) %&gt;%
@@ -625,7 +625,7 @@ offClean2</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Which ISU player(s) made big progress over the last year? Compare the 2019 and the 2018 data here.</li>
 </ol>
-<p>Defense: There were 28 players that played during both the 2018 and 2019 seasons, O’Rien Vance and Zach Petersen appear to show the most improvement in several defensive skills; JaQuan Baiey didn’t perform as well in the 2019 season as he did in the 2018 season.</p>
+<p>Defense: There were 28 players that played during both the 2018 and 2019 seasons, O’Rien Vance and Zach Petersen appear to show the most improvement in several defensive skills; JaQuan Bailey didn’t perform as well in the 2019 season as he did in the 2018 season.</p>
 <pre class="r"><code>defense2 &lt;- read_excel(&#39;C:/Users/lisa.mcdaniel/DS202/ds202lab4/cyclonesFootball2018.xlsx&#39;,
                       sheet=&quot;Defensive&quot;)
 
